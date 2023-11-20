@@ -57,6 +57,13 @@ def check_poly(s):
 
 
 # solution to problem from Coderbyte task
+# get list of integers stored in the following format: [K, r1, r2, r3, ...] 
+# where K represents the number of desks in a classroom, 
+# and the rest of the integers in the array will be in sorted order and will represent the desks that are already occupied. 
+# All of the desks will be arranged in 2 columns, 
+# where desk #1 is at the top left, desk #2 is at the top right, desk #3 is below #1, desk #4 is below #2, etc. 
+# The program should the number of ways 2 students can be seated next to each other. 
+# This means 1 student is on the left and 1 student on the right, or 1 student is directly above or below the other student.
 def ArrayChallenge(arr):
   K = arr[0]
   desks = arr[1:]
