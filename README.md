@@ -1,1 +1,1 @@
-Solutions to Python excercise
+Solutions to Python problems
