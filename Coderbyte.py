@@ -1,4 +1,31 @@
 # solution to Tree Constructor challenge from Coderbyte
+# https://coderbyte.com/results/mich100:First%20Reverse:Python3
+def FirstReverse(strParam):
+  i = len(strParam) - 1
+  reverse = ''
+  while i >= 0:
+    reverse += strParam[i]
+    i -= 1
+  return reverse
+
+
+# solution to Tree Constructor challenge from Coderbyte
+# https://coderbyte.com/results/mich100:Longest%20Word:Python3
+import string
+
+def LongestWord(sen):
+  s = ''
+  for i in sen:
+    if i not in string.punctuation:
+      s += i
+  longest = ''
+  for word in s.split():
+    if len(word) > len(longest):
+      longest = word
+  return longest
+
+
+# solution to Tree Constructor challenge from Coderbyte
 # https://coderbyte.com/results/mich100:Tree%20Constructor:Python3
 def TreeConstructor(strArr):
     children = list()
