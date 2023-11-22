@@ -1,4 +1,14 @@
-# solution to Tree Constructor challenge from Coderbyte
+# solution to First Factorial challenge from Coderbyte
+# https://coderbyte.com/results/mich100:First%20Factorial:Python3
+def FirstFactorial(num):
+  i = num - 1
+  while i > 1:
+    num *= i
+    i -= 1
+  return num
+
+
+# solution to First Reverse challenge from Coderbyte
 # https://coderbyte.com/results/mich100:First%20Reverse:Python3
 def FirstReverse(strParam):
   i = len(strParam) - 1
@@ -9,7 +19,7 @@ def FirstReverse(strParam):
   return reverse
 
 
-# solution to Tree Constructor challenge from Coderbyte
+# solution to Longest Word challenge from Coderbyte
 # https://coderbyte.com/results/mich100:Longest%20Word:Python3
 import string
 
