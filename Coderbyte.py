@@ -61,6 +61,17 @@ def TreeConstructor(strArr):
     return True
 
 
+# solution to Bracket Combinations challenge from Coderbyte
+# the function FirstFactorial is the first function in this file
+# https://coderbyte.com/results/mich100:Bracket%20Combinations:Python3
+def BracketCombinations(num):
+  if num == 0:
+    return 1
+  fact1 = FirstFactorial(num)
+  fact2 = FirstFactorial(2 * num)
+  return fact2 // (fact1 * fact1 * (num + 1))
+
+
 # solution to problem from Coderbyte task
 # check if it is possible to make palindrome (with length higher than 3) from string
 # by removing at the more 2 characters
