@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/two-sum/submissions/1108686291
+# https://leetcode.com/problems/two-sum/solutions/4343671/solution-in-python3/
 # find the two numbers' places, where the numbers sum if the given number
 # there are exactly two places
 class Solution:
