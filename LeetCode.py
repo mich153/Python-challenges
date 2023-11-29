@@ -47,3 +47,23 @@ class Solution:
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
         nums.sort()
+
+# https://leetcode.com/problems/3sum-closest/submissions/1108777837
+# find the sum of three of the numbers that it is the closest sum to given number
+class Solution:
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        output = nums[0] + nums[1] + nums[2]
+        i = 0
+        while i < len(nums):
+            j = i + 1
+            while j < len(nums):
+                q = j + 1
+                while q < len(nums):
+                    if abs(nums[i] + nums[j] + nums[q] - target) == 0:
+                        return nums[i] + nums[j] + nums[q]
+                    elif abs(nums[i] + nums[j] + nums[q] - target) < abs(output - target):
+                        output = nums[i] + nums[j] + nums[q]
+                    q += 1
+                j+=1
+            i += 1
+        return output
