@@ -40,3 +40,10 @@ class Solution:
             i += 1
         if len(output) > 0:
             return output
+
+# https://leetcode.com/problems/sort-colors/submissions/1108749593
+# sort list of the colors red, white and blue
+# when used the integers 0, 1, and 2 to represent the color red, white, and blue, respectively.
+class Solution:
+    def sortColors(self, nums: List[int]) -> None:
+        nums.sort()
