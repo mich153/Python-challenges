@@ -1,3 +1,5 @@
+import math
+
 # https://leetcode.com/problems/two-sum/solutions/4343671/solution-in-python3/
 # find the two numbers' places, where the numbers sum if the given number
 # there are exactly two places
@@ -71,3 +73,41 @@ class Solution:
                 return False
         return len(stack) == 0 #all the open brackets closed
         
+# https://leetcode.com/problems/simplify-path/solutions/4345855/simple-solution-in-python3/
+# get absolute path and return the convert to simplified canonical path
+    def simplifyPath(self, path: str) -> str:
+        lst = path.split('/')
+        while lst.count('') > 0:
+            lst.remove('')
+        stack = list()
+        for x in lst:
+            if x == '..' and len(stack) > 0:
+                stack.pop()
+            elif x != '.' and x != '..':
+                stack.append(x)
+        return '/' + '/'.join(stack)
+
+# https://leetcode.com/problems/evaluate-reverse-polish-notation/solutions/4346036/solution/
+# solve excersice
+    def evalRPN(self, tokens: List[str]) -> int:
+        stack = list()
+        for ch in tokens:
+            if ch in ['+', '-', '*', '/']:
+                num2 = stack.pop()
+                num1 = stack.pop()
+                if ch == '+':
+                    result = num1 + num2
+                elif ch == '-':
+                    result = num1 - num2
+                elif ch == '*':
+                    result = num1 * num2
+                else:
+                    result = num1 / num2
+                    if result >= 0:
+                        result = math.floor(result)
+                    else:
+                        result = math.ceil(result)
+                stack.append(result)
+            else:
+                stack.append(int(ch))
+        return stack[0]
