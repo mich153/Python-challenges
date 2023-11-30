@@ -111,3 +111,32 @@ class Solution:
             else:
                 stack.append(int(ch))
         return stack[0]
+
+# https://leetcode.com/problems/find-the-winner-of-the-circular-game/solutions/4346167/solution-in-python3/
+# game simulation
+    def findTheWinner(self, n: int, k: int) -> int:
+        friends = list(range(1, n + 1))
+        i = 0
+        while len(friends) > 1:
+            i += k - 1 #step over 2 poeple
+            i %= len(friends)
+            lose = friends[i]
+            friends.remove(lose)
+        return friends[0]
+
+# https://leetcode.com/problems/happy-number/solutions/4346944/solution-in-python/
+# check if it is happy number
+    def isHappy(self, n: int) -> bool:
+        nums = [n]
+        while n != 1:
+            temp = n
+            s = 0
+            while temp > 0:
+                s += (temp % 10) ** 2
+                temp //= 10
+            if s in nums:
+                return False
+            nums.append(s)
+            n = s
+        return True 
+        
