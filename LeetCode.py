@@ -47,3 +47,27 @@ class Solution:
             temp = ListNode(val = num, next = nextNode)
             nextNode = temp
         return nextNode
+
+# https://leetcode.com/problems/valid-parentheses/solutions/4345661/solution-in-python3/
+# chack if it valid string of brackets
+    def isValid(self, s: str) -> bool:
+        stack = list()
+        for ch in s:
+            if ch in ['(', '[', '{']: #open bracket
+                stack.append(ch)
+            elif ch in [')', ']', '}']: #close bracet
+                #chack if open brackets closed in the correct order
+                #and closed by the same type of btackets
+                if len(stack) == 0:
+                    return False
+                opn = stack.pop()
+                if opn == '(' and ch != ')':
+                    return False
+                elif opn == '[' and ch != ']':
+                    return False
+                elif opn == '{' and ch != '}':
+                    return False
+            else: #illegal charecter
+                return False
+        return len(stack) == 0 #all the open brackets closed
+        
